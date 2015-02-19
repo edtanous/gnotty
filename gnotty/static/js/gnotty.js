@@ -38,7 +38,7 @@ var IRCClient = function(options) {
     }
 
     var host = options.httpHost == '0.0.0.0' ? '' : options.httpHost;
-    self.socket = io.connect(host + ':' + options.httpPort, {
+    self.socket = io.connect('http://' + host + ':' + options.httpPort, {
         transports: ['websocket', 'htmlfile', 'xhr-multipart',
                      'xhr-polling', 'jsonp-polling']
     });
