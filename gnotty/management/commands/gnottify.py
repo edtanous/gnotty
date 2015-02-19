@@ -29,5 +29,5 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         getLogger("irc.message").addHandler(ModelLogger())
         settings.parse_args()
-        from gnotty.server import serve_forever
-        serve_forever(django=True)
+        from gnotty.server import run
+        run()
